@@ -69,6 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       extraProjects.forEach((card) => {
         card.classList.toggle('hidden', !isHidden);
+        if (isHidden) {
+          // Trigger smooth reveal animation when unhiding
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, 30);
+        }
       });
 
       const span = viewAllBtn.querySelector('span');
