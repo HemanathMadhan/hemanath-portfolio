@@ -119,4 +119,118 @@ document.addEventListener('DOMContentLoaded', () => {
   modalPrintBtn?.addEventListener('click', () => {
     window.print();
   });
+
+  // 5. Hero Typewriter Role Animation
+  const typewriterEl = document.getElementById('typewriterText');
+  if (typewriterEl) {
+    const roles = [
+      'Software Developer',
+      'Web & Python Developer',
+      'Machine Learning Enthusiast',
+      'Database Specialist'
+    ];
+    let roleIndex = 0;
+    let charIndex = roles[0].length;
+    let isDeleting = true;
+
+    const typeStep = () => {
+      const currentRole = roles[roleIndex];
+
+      if (isDeleting) {
+        charIndex--;
+        typewriterEl.textContent = currentRole.substring(0, charIndex);
+        if (charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(typeStep, 350);
+          return;
+        }
+        setTimeout(typeStep, 45);
+      } else {
+        charIndex++;
+        typewriterEl.textContent = currentRole.substring(0, charIndex);
+        if (charIndex === currentRole.length) {
+          isDeleting = true;
+          setTimeout(typeStep, 2200);
+          return;
+        }
+        setTimeout(typeStep, 80);
+      }
+    };
+
+    // Initial pause so the visitor reads the first role
+    setTimeout(typeStep, 2200);
+  }
+
+  // 6. Scroll Reveal Observer
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if ('IntersectionObserver' in window && revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.12
+    });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add('visible'));
+  }
+
+  // 7. Animated Number Counters
+  const counters = document.querySelectorAll('.counter');
+  if (counters.length > 0) {
+    let countersStarted = false;
+
+    const startCounters = () => {
+      if (countersStarted) return;
+      countersStarted = true;
+
+      counters.forEach((counter) => {
+        const target = parseFloat(counter.getAttribute('data-target') || '0');
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const duration = 1400;
+        const startTime = performance.now();
+
+        const updateCount = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic curve
+          const easeProgress = 1 - Math.pow(1 - progress, 3);
+          const currentVal = Math.floor(easeProgress * target);
+
+          counter.textContent = currentVal + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.textContent = target + suffix;
+          }
+        };
+
+        requestAnimationFrame(updateCount);
+      });
+    };
+
+    const statsRow = document.querySelector('.hero-stats-row');
+    if (statsRow && 'IntersectionObserver' in window) {
+      const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      statsObserver.observe(statsRow);
+    } else {
+      setTimeout(startCounters, 600);
+    }
+  }
 });

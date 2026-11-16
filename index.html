@@ -68,7 +68,7 @@
           </h1>
 
           <h2 class="hero-role">
-            Software Developer <span class="typing-cursor">|</span>
+            <span class="role-text" id="typewriterText">Software Developer</span><span class="typing-cursor">|</span>
           </h2>
 
           <p class="hero-description">
@@ -110,7 +110,7 @@
                 </svg>
               </div>
               <div class="stat-info">
-                <strong>8+</strong>
+                <strong class="counter" data-target="8" data-suffix="+">8+</strong>
                 <span>Projects</span>
               </div>
             </div>
@@ -140,7 +140,7 @@
                 </svg>
               </div>
               <div class="stat-info">
-                <strong>1+</strong>
+                <strong class="counter" data-target="1" data-suffix="+">1+</strong>
                 <span>Years Experience</span>
               </div>
             </div>
@@ -159,7 +159,7 @@
     <!-- 3. About Section -->
     <section class="section about-section" id="about">
       <div class="container about-grid">
-        <div class="about-photo-col">
+        <div class="about-photo-col reveal-left">
           <div class="about-dot-grid" aria-hidden="true">
             <span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span>
@@ -172,7 +172,7 @@
           </div>
         </div>
 
-        <div class="about-content-col">
+        <div class="about-content-col reveal">
           <div class="section-title-wrap">
             <h2 class="section-title">About <span class="accent-green">Me</span></h2>
           </div>
@@ -216,7 +216,7 @@
           </ul>
         </div>
 
-        <div class="about-goals-col">
+        <div class="about-goals-col reveal-right">
           <div class="goals-card">
             <div class="goals-header">
               <span class="goals-icon">
@@ -643,7 +643,7 @@
     <section class="section edu-exp-section" id="education">
       <div class="container edu-exp-grid">
         <!-- Left Column: Education -->
-        <div class="edu-column">
+        <div class="edu-column reveal-left">
           <div class="section-title-wrap">
             <div class="sub-header-row">
               <div class="section-badge-icon">
@@ -719,7 +719,7 @@
         </div>
 
         <!-- Right Column: Experience & Certifications -->
-        <div class="exp-column">
+        <div class="exp-column reveal-right">
           <!-- Experience Block -->
           <div class="exp-block">
             <div class="sub-header-row">
@@ -819,7 +819,7 @@
     <!-- 7. Contact Section ("Get in Touch") -->
     <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="contact-banner">
+        <div class="contact-banner reveal-scale">
           <div class="contact-banner-left">
             <div class="contact-icon-bubble">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

@@ -328,10 +328,14 @@ button {
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 18px;
+  animation: fadeInDown 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .wave-emoji {
   font-size: 15px;
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: waveHand 2.2s infinite;
 }
 
 .hero-title {
@@ -341,6 +345,7 @@ button {
   color: var(--text-dark);
   letter-spacing: -1.5px;
   margin-bottom: 10px;
+  animation: fadeInUp 0.8s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-role {
@@ -350,6 +355,7 @@ button {
   margin-bottom: 18px;
   display: flex;
   align-items: center;
+  animation: fadeInUp 0.8s 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .typing-cursor {
@@ -370,6 +376,7 @@ button {
   max-width: 520px;
   line-height: 1.7;
   margin-bottom: 28px;
+  animation: fadeInUp 0.8s 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-cta-group {
@@ -378,6 +385,7 @@ button {
   gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 38px;
+  animation: fadeInUp 0.8s 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-stats-row {
@@ -387,6 +395,7 @@ button {
   padding-top: 24px;
   border-top: 1px solid var(--border-light);
   flex-wrap: wrap;
+  animation: fadeInUp 0.8s 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-stat-card {
@@ -427,6 +436,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeInUp 0.9s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-visual-container {
@@ -442,11 +452,12 @@ button {
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 15px 30px rgba(8, 114, 71, 0.12));
+  animation: heroFloat 5.5s ease-in-out infinite alternate;
   transition: transform 0.35s ease;
 }
 
 .hero-avatar-image:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-8px) scale(1.02);
 }
 
 /* ==========================================================================
@@ -1435,5 +1446,179 @@ button {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   Page Visit & Scroll Reveal Animation Suite
+   ========================================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes waveHand {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Scroll Reveal Elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Stagger Delays for Skills */
+.skills-grid .skill-card:nth-child(1) { transition-delay: 0.04s; }
+.skills-grid .skill-card:nth-child(2) { transition-delay: 0.08s; }
+.skills-grid .skill-card:nth-child(3) { transition-delay: 0.12s; }
+.skills-grid .skill-card:nth-child(4) { transition-delay: 0.16s; }
+.skills-grid .skill-card:nth-child(5) { transition-delay: 0.20s; }
+.skills-grid .skill-card:nth-child(6) { transition-delay: 0.24s; }
+.skills-grid .skill-card:nth-child(7) { transition-delay: 0.28s; }
+.skills-grid .skill-card:nth-child(8) { transition-delay: 0.32s; }
+
+/* Stagger Delays for Projects */
+.projects-grid .project-card:nth-child(1) { transition-delay: 0.05s; }
+.projects-grid .project-card:nth-child(2) { transition-delay: 0.12s; }
+.projects-grid .project-card:nth-child(3) { transition-delay: 0.19s; }
+.projects-grid .project-card:nth-child(4) { transition-delay: 0.26s; }
+.projects-grid .project-card:nth-child(5) { transition-delay: 0.33s; }
+.projects-grid .project-card:nth-child(6) { transition-delay: 0.40s; }
+.projects-grid .project-card:nth-child(7) { transition-delay: 0.47s; }
+.projects-grid .project-card:nth-child(8) { transition-delay: 0.54s; }
+
+/* Enhanced Interactive Hover Animations */
+.skill-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary-emerald);
+  box-shadow: 0 12px 28px rgba(8, 114, 71, 0.14);
+}
+
+.skill-card:hover .skill-icon-wrap {
+  transform: scale(1.14) rotate(4deg);
+}
+
+.skill-icon-wrap {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-emerald);
+  box-shadow: 0 16px 36px rgba(8, 114, 71, 0.15);
+}
+
+.project-card:hover .project-ext-link svg {
+  transform: translate(3px, -3px);
+  color: var(--primary-emerald);
+}
+
+.project-ext-link svg {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
