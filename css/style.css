@@ -740,7 +740,7 @@ button {
 .project-preview-wrap {
   position: relative;
   width: 100%;
-  height: 155px;
+  height: 165px;
   background-color: #0f172a;
   overflow: hidden;
 }
@@ -749,6 +749,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.35s ease;
 }
 
