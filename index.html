@@ -3,106 +3,700 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hemanath M — Software Developer portfolio showcasing web development, Python, Java, databases and machine learning projects.">
-  <title>Hemanath M | Software Developer</title>
+  <meta name="description" content="Hemanath M. — Software Developer Portfolio. Web Development, Databases, Python, Machine Learning and Data Analytics.">
+  <title>Hemanath M. | Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Hemanath home"><span class="brand-mark">H</span><span>hemanath<span class="brand-dot">.</span></span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact" class="nav-contact">Contact me <span>↗</span></a>
+
+  <!-- 1. Header / Navigation -->
+  <header class="site-header" id="header">
+    <nav class="nav-container container" aria-label="Main Navigation">
+      <a href="#home" class="brand-logo" aria-label="Hemanath M Home">
+        <span class="logo-box">H</span>
+        <span class="logo-name">Hemanath M.</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-resume" id="resumeBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Download Resume</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero section container" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> OPEN TO OPPORTUNITIES</div>
-        <p class="hero-kicker">Hello, I'm</p>
-        <h1>Hemanath <span class="accent">M.</span></h1>
-        <h2>Software Developer</h2>
-        <p class="hero-description">I build practical digital solutions and enjoy turning ideas into clean, useful applications. My interests include web development, databases, Python and machine learning.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Explore my work <span>↗</span></a>
-          <a class="button button-secondary" href="#contact">Get in touch</a>
+    <!-- 2. Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="greeting-badge">
+            <span class="wave-emoji">👋</span>
+            <span>Hello, I'm</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hemanath <span class="accent-green">M.</span>
+          </h1>
+
+          <h2 class="hero-role">
+            Software Developer <span class="typing-cursor">|</span>
+          </h2>
+
+          <p class="hero-description">
+            I build practical digital solutions and enjoy turning ideas into clean, useful applications. My interests include web development, databases, Python and machine learning.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+              <span>Explore My Work</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="hero-stat-card">
+              <div class="stat-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <div class="stat-info">
+                <strong>8+</strong>
+                <span>Projects</span>
+              </div>
+            </div>
+
+            <div class="hero-stat-card">
+              <div class="stat-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div class="stat-info">
+                <strong>M.Sc</strong>
+                <span>Computer Science</span>
+              </div>
+            </div>
+
+            <div class="hero-stat-card">
+              <div class="stat-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </div>
+              <div class="stat-info">
+                <strong>2+</strong>
+                <span>Years Experience</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="hero-meta"><span>Based in Chennai, India</span><span class="meta-divider"></span><span>M.Sc. Computer Science</span></div>
-      </div>
-      <div class="hero-visual" aria-label="Hemanath M — Software Developer">
-        <div class="hero-photo-container">
-          <img src="assets/profile.jpg" alt="Hemanath M — Software Developer" class="hero-profile-image" width="935" height="1024" loading="eager">
+
+        <div class="hero-visual-wrapper">
+          <div class="hero-visual-container">
+            <img src="assets/hero-avatar.png" alt="Hemanath M. — Software Developer" class="hero-avatar-image" width="666" height="498" loading="eager">
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="quick-stats container" aria-label="Portfolio highlights">
-      <div><strong>8+</strong><span>Projects</span></div>
-      <div><strong>6+</strong><span>Core technologies</span></div>
-      <div><strong>M.Sc.</strong><span>Computer Science</span></div>
-    </section>
+    <!-- 3. About Section -->
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-photo-col">
+          <div class="about-dot-grid" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="about-image-card">
+            <img src="assets/about-avatar.png" alt="Hemanath M. Portrait" class="about-avatar-img" width="220" height="238" loading="lazy">
+          </div>
+        </div>
 
-    <section class="section section-muted" id="about">
-      <div class="container section-grid">
-        <div class="section-heading"><p class="section-label">01 / ABOUT ME</p><h2>Curious mind.<br><span class="accent">Practical builder.</span></h2></div>
-        <div class="section-content">
-          <p class="lead">I am a Computer Science postgraduate interested in developing reliable software and solving real-world problems with technology.</p>
-          <p>My academic and project experience has introduced me to web application development, database management, data analysis and machine learning. I enjoy learning new tools, improving my coding skills and building solutions that are clear and useful to people.</p>
-          <p>I am looking to begin and grow my career in a professional technology team where I can contribute, learn and take on meaningful development work.</p>
-          <div class="about-tags"><span>Problem solving</span><span>Continuous learning</span><span>Team collaboration</span></div>
+        <div class="about-content-col">
+          <div class="section-title-wrap">
+            <h2 class="section-title">About <span class="accent-green">Me</span></h2>
+          </div>
+          <p class="about-intro">
+            I'm <strong>Hemanath M.</strong>, a Computer Science post-graduate with a passion for building real-world applications and solving problems through technology. I enjoy working on web development, data analysis and machine learning projects.
+          </p>
+
+          <ul class="about-details-list">
+            <li>
+              <div class="detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <span>Chennai, India</span>
+            </li>
+            <li>
+              <div class="detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <span>M.Sc. Computer Science</span>
+            </li>
+            <li>
+              <div class="detail-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <span>Madras University (Contract Employee)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-goals-col">
+          <div class="goals-card">
+            <div class="goals-header">
+              <span class="goals-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+              </span>
+              <h3>My Goals</h3>
+            </div>
+
+            <div class="goal-item">
+              <div class="goal-bullet-icon flag-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+              </div>
+              <div class="goal-content">
+                <h4>Short-term</h4>
+                <p>Begin a career in a reputed organization.</p>
+              </div>
+            </div>
+
+            <div class="goal-item">
+              <div class="goal-bullet-icon trophy-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+              </div>
+              <div class="goal-content">
+                <h4>Long-term</h4>
+                <p>Help and support my family.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section container" id="skills">
-      <div class="section-heading centered"><p class="section-label">02 / MY TOOLKIT</p><h2>Skills & technologies</h2><p class="section-subtitle">Tools and technologies I have worked with through learning and projects.</p></div>
-      <div class="skills-grid">
-        <article class="skill-card"><div class="skill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div><h3>Programming</h3><div class="skill-list"><span>Java</span><span>Python</span><span>PHP</span><span>JavaScript</span></div></article>
-        <article class="skill-card"><div class="skill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div><h3>Web development</h3><div class="skill-list"><span>HTML5</span><span>CSS3</span><span>PHP</span><span>Bootstrap</span></div></article>
-        <article class="skill-card"><div class="skill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div><h3>Database</h3><div class="skill-list"><span>MySQL</span><span>SQL</span><span>Database design</span></div></article>
-        <article class="skill-card"><div class="skill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div><h3>Data & machine learning</h3><div class="skill-list"><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>TensorFlow</span><span>Matplotlib</span></div></article>
-        <article class="skill-card"><div class="skill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div><h3>Tools</h3><div class="skill-list"><span>Git</span><span>GitHub</span><span>Google Colab</span><span>XAMPP</span></div></article>
-        <article class="skill-card"><div class="skill-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div><h3>Areas of interest</h3><div class="skill-list"><span>Software development</span><span>Data analytics</span></div></article>
-      </div>
-    </section>
-
-    <section class="section section-muted" id="projects">
+    <!-- 4. Technical Skills Section -->
+    <section class="section skills-section" id="skills">
       <div class="container">
-        <div class="section-heading"><p class="section-label">03 / SELECTED WORK</p><h2>Projects I've worked on</h2><p class="section-subtitle">A selection of academic and practical projects. Add your repository and demo links before publishing.</p></div>
-        <div class="projects-grid">
-          <article class="project-card project-featured"><div class="project-art art-network"><div class="network-node node-a">Core</div><div class="network-node node-b">Switch</div><div class="network-node node-c">Room</div><div class="network-line line-a"></div><div class="network-line line-b"></div><div class="network-line line-c"></div></div><div class="project-body"><div class="project-type">WEB APPLICATION</div><h3>University Network Management System</h3><p>A web-based concept for organizing campus buildings, departments, rooms and network-device information.</p><div class="project-tags"><span>HTML/CSS</span><span>JavaScript</span><span>PHP / MySQL</span></div><a class="project-link" href="#contact">Ask me about this project <span>↗</span></a></div></article>
-          <article class="project-card"><div class="project-art art-leaf"><span class="art-symbol"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.2a7 7 0 0 1-9 8.8z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg></span><span class="art-caption">IMAGE CLASSIFICATION</span></div><div class="project-body"><div class="project-type">MACHINE LEARNING</div><h3>Leaf Disease Identification</h3><p>A CNN-based image classification project exploring the identification of plant leaf diseases.</p><div class="project-tags"><span>Python</span><span>TensorFlow</span><span>CNN</span></div><a class="project-link" href="#contact">Ask me about this project <span>↗</span></a></div></article>
-          <article class="project-card"><div class="project-art art-flower"><span class="art-symbol"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2a4 4 0 0 0-4 4c0 3 4 5 4 5s4-2 4-5a4 4 0 0 0-4-4z"></path><path d="M12 22a4 4 0 0 0 4-4c0-3-4-5-4-5s-4 2-4 5a4 4 0 0 0 4 4z"></path><path d="M2 12a4 4 0 0 0 4 4c3 0 5-4 5-4s-2-4-5-4a4 4 0 0 0-4 4z"></path><path d="M22 12a4 4 0 0 0-4-4c-3 0-5 4-5 4s2 4 5 4a4 4 0 0 0 4-4z"></path></svg></span><span class="art-caption">FLOWER RECOGNITION</span></div><div class="project-body"><div class="project-type">WEB + MACHINE LEARNING</div><h3>Flower Recognition System</h3><p>A flower image recognition project using CNN, with a PHP-based frontend interface.</p><div class="project-tags"><span>Python</span><span>CNN</span><span>PHP</span></div><a class="project-link" href="#contact">Ask me about this project <span>↗</span></a></div></article>
-          <article class="project-card"><div class="project-art art-medical"><span class="medical-cross">+</span><span class="art-caption">DENSENET-201</span></div><div class="project-body"><div class="project-type">DEEP LEARNING</div><h3>Skin Cancer Detection</h3><p>An image classification project using a DenseNet-201 model saved in H5 format.</p><div class="project-tags"><span>Python</span><span>TensorFlow</span><span>DenseNet-201</span></div><a class="project-link" href="#contact">Ask me about this project <span>↗</span></a></div></article>
-          <article class="project-card"><div class="project-art art-airline"><span class="chart-bars"><i></i><i></i><i></i><i></i><i></i></span><span class="art-caption">EXPLORATORY DATA ANALYSIS</span></div><div class="project-body"><div class="project-type">DATA ANALYTICS</div><h3>Airline Dataset Analysis</h3><p>Exploratory data analysis to inspect patterns, summarize information and communicate findings.</p><div class="project-tags"><span>Python</span><span>Pandas</span><span>Matplotlib</span></div><a class="project-link" href="#contact">Ask me about this project <span>↗</span></a></div></article>
-          <article class="project-card"><div class="project-art art-phone"><div class="phone-shape"><span></span><i></i><b></b></div><span class="art-caption">DATA EXPLORATION</span></div><div class="project-body"><div class="project-type">DATA ANALYTICS</div><h3>Smartphone Dataset Analysis</h3><p>Exploratory analysis of smartphone data to understand features and compare product attributes.</p><div class="project-tags"><span>Python</span><span>Pandas</span><span>Seaborn</span></div><a class="project-link" href="#contact">Ask me about this project <span>↗</span></a></div></article>
+        <div class="section-title-wrap centered">
+          <h2 class="section-title">
+            <span class="icon-tag">&lt;/&gt;</span> Technical <span class="accent-green">Skills</span>
+          </h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- 1. Java -->
+          <div class="skill-card">
+            <div class="skill-icon-wrap icon-java">
+              <svg width="32" height="32" viewBox="0 0 32 32">
+                <path d="M11 23c4 .5 8 .5 12-1 0 0-2 2-6 2s-6-1-6-1z" fill="#007396"/>
+                <path d="M10 25c5 .5 10 .5 14-1 0 0-3 3-8 3s-6-2-6-2z" fill="#ed8b00"/>
+                <path d="M19 14c2-2 1-4-1-6 0 0 1 1 0 2s-3 3-1 4z" fill="#5382a1"/>
+                <path d="M15 13c3-3 1-5-1-8 0 0 1 1 0 3s-3 3 0 5z" fill="#e76f00"/>
+                <path d="M9 20c7 1 14 0 16-2 0 0-3 2-8 2s-8 0-8 0z" fill="#007396"/>
+                <path d="M21 16c4 0 5-2 5-2s-1 1-3 1c-3 0-5-1-7-1s-4 1-4 1 2 0 4 0 3 1 5 1z" fill="#e76f00"/>
+              </svg>
+            </div>
+            <span class="skill-label">Java</span>
+          </div>
+
+          <!-- 2. Python -->
+          <div class="skill-card">
+            <div class="skill-icon-wrap icon-python">
+              <svg width="32" height="32" viewBox="0 0 32 32">
+                <path d="M15.8 4c-5.2 0-4.9 2.2-4.9 2.2l.1 2.3h5v.7h-7s-3.2.4-3.2 4.7 2.8 4.6 2.8 4.6h1.7v-2.3c0-2.6 2.3-2.5 2.3-2.5h5.1c2 0 2-1.9 2-1.9v-5.6s.4-2.2-3.9-2.2zm-2.4 1.4a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6z" fill="#387eb8"/>
+                <path d="M16.2 28c5.2 0 4.9-2.2 4.9-2.2l-.1-2.3h-5v-.7h7s3.2-.4 3.2-4.7-2.8-4.6-2.8-4.6h-1.7v2.3c0 2.6-2.3 2.5-2.3 2.5h-5.1c-2 0-2 1.9-2 1.9v5.6s-.4 2.2 3.9 2.2zm2.4-1.4a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z" fill="#ffe052"/>
+              </svg>
+            </div>
+            <span class="skill-label">Python</span>
+          </div>
+
+          <!-- 3. MySQL -->
+          <div class="skill-card">
+            <div class="skill-icon-wrap icon-mysql">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M26 18c-1.5-2.5-3.5-4-6.5-4.5-1.5-.2-2.5.5-3.5 1.5-1 1-1.8 1.5-3 1.5-2.5 0-4.5-2-5-4.5 1 2 2.5 3 4.5 3 2 0 3.5-.8 4.5-2 1.2-1.3 2.8-2 5-1.8 2.5.3 4.5 1.8 5.8 3.8.3-.8.2-1.8-.3-2.5-1-1.5-2.8-2.5-5-2.8-3-.3-5.5.8-7.2 2.8-.8-1-2-1.6-3.3-1.6-2 0-3.8 1.2-4.5 3-.5 1.2-.5 2.5-.2 3.8C8 22 10.5 24 13.5 24c3 0 5-1.5 6.5-3.5 1.2 1.2 2.8 2 4.8 2.2 2 .2 3.8-.5 5-2-.2 0-.4-.1-.5-.2-1.2.8-2.5 1-3.3.5z" fill="#00758F"/>
+              </svg>
+            </div>
+            <span class="skill-label">MySQL</span>
+          </div>
+
+          <!-- 4. SQL -->
+          <div class="skill-card">
+            <div class="skill-icon-wrap icon-sql">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <span class="skill-label">SQL</span>
+          </div>
+
+          <!-- 5. PHP -->
+          <div class="skill-card">
+            <div class="skill-icon-wrap icon-php">
+              <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
+                <rect width="34" height="26" rx="13" fill="#777BB4"/>
+                <text x="17" y="17" fill="white" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="11" text-anchor="middle" letter-spacing="1">PHP</text>
+              </svg>
+            </div>
+            <span class="skill-label">PHP</span>
+          </div>
+
+          <!-- 6. Web Dev -->
+          <div class="skill-card">
+            <div class="skill-icon-wrap icon-web">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <span class="skill-label">Web Dev</span>
+          </div>
+
+          <!-- 7. Data Analytics -->
+          <div class="skill-card">
+            <div class="skill-icon-wrap icon-analytics">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+                <polyline points="4 8 12 3 20 8"></polyline>
+              </svg>
+            </div>
+            <span class="skill-label">Data Analytics</span>
+          </div>
+
+          <!-- 8. TensorFlow -->
+          <div class="skill-card">
+            <div class="skill-icon-wrap icon-tf">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 4 6 10v6l10-6v18l10-6V10L16 4z" fill="#FF6F00"/>
+                <path d="M16 4v18l-10-6V10l10-6z" fill="#FFA800"/>
+                <path d="M16 10v12l10-6V10L16 4z" fill="#E65100" opacity="0.4"/>
+              </svg>
+            </div>
+            <span class="skill-label">TensorFlow</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section container" id="education">
-      <div class="section-heading centered"><p class="section-label">04 / MY JOURNEY</p><h2>Education & experience</h2></div>
-      <div class="timeline">
-        <article class="timeline-item"><div class="timeline-marker"></div><div class="timeline-date">POSTGRADUATE</div><div class="timeline-card"><h3>M.Sc. Computer Science</h3><p class="timeline-place">University of Madras — Institute of Distance Education</p><p>Postgraduate studies in Computer Science.</p></div></article>
-        <article class="timeline-item"><div class="timeline-marker"></div><div class="timeline-date">UNDERGRADUATE</div><div class="timeline-card"><h3>Bachelor of Computer Applications (BCA)</h3><p class="timeline-place">Dr. M.G.R. Educational and Research Institute</p><p>Undergraduate foundation in computer applications.</p></div></article>
-        <article class="timeline-item"><div class="timeline-marker"></div><div class="timeline-date">WORK EXPERIENCE</div><div class="timeline-card"><h3>Contract Employee</h3><p class="timeline-place">University of Madras</p><p>Working in a university environment in a contract role. Add your exact designation, dates and responsibilities here.</p></div></article>
+    <!-- 5. Projects Section -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="projects-header-row">
+          <div class="projects-heading-left">
+            <div class="section-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <div>
+              <h2 class="section-title">Projects</h2>
+              <p class="section-subtitle">Some of my key academic and personal projects.</p>
+            </div>
+          </div>
+
+          <div class="projects-heading-right">
+            <button class="btn btn-outline" id="viewAllProjectsBtn">
+              <span>View All Projects</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Project 1: Leaf Disease -->
+          <article class="project-card">
+            <div class="project-preview-wrap">
+              <img src="assets/project-leaf.jpg" alt="Leaf Disease Identification Preview" class="project-img" width="380" height="148" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title">Leaf Disease Identification</h3>
+                <a href="#contact" class="project-ext-link" aria-label="View Leaf Disease Identification details">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+              <p class="project-desc">Plant leaf disease detection using CNN (Convolutional Neural Network).</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">CNN</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Flower Recognition -->
+          <article class="project-card">
+            <div class="project-preview-wrap">
+              <img src="assets/project-flower.jpg" alt="Flower Recognition System Preview" class="project-img" width="382" height="148" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title">Flower Recognition System</h3>
+                <a href="#contact" class="project-ext-link" aria-label="View Flower Recognition System details">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+              <p class="project-desc">Flower classification using CNN with a PHP based web interface.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">PHP</span>
+                <span class="tag">CNN</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Skin Cancer Detection -->
+          <article class="project-card">
+            <div class="project-preview-wrap">
+              <img src="assets/project-cancer.jpg" alt="Skin Cancer Detection Preview" class="project-img" width="382" height="148" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title">Skin Cancer Detection</h3>
+                <a href="#contact" class="project-ext-link" aria-label="View Skin Cancer Detection details">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+              <p class="project-desc">Skin cancer classification using DenseNet-201 (.h5 model).</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">Deep Learning</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Airline Dataset Analysis -->
+          <article class="project-card project-extra hidden">
+            <div class="project-preview-wrap">
+              <img src="assets/project-airline.jpg" alt="Airline Dataset Analysis Preview" class="project-img" width="380" height="148" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title">Airline Dataset EDA</h3>
+                <a href="#contact" class="project-ext-link" aria-label="View Airline Dataset Analysis details">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+              <p class="project-desc">Exploratory data analysis inspecting flight patterns, delays and trends.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Matplotlib</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Smartphone Dataset Analysis -->
+          <article class="project-card project-extra hidden">
+            <div class="project-preview-wrap">
+              <img src="assets/project-smartphone.jpg" alt="Smartphone Dataset Analysis Preview" class="project-img" width="380" height="148" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title">Smartphone Dataset EDA</h3>
+                <a href="#contact" class="project-ext-link" aria-label="View Smartphone Dataset Analysis details">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+              <p class="project-desc">Exploratory analysis of smartphone market data, specifications and pricing.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Seaborn</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="certifications"><h3>Certifications & additional learning</h3><div class="cert-list"><span>SAP Basic Level Certification — RPS Academy (2025)</span><span>Typewriting — Lower Level</span><span>Data Analytics Project</span><span>ChatGPT for Data Analytics</span></div></div>
     </section>
 
-    <section class="contact-section" id="contact">
-      <div class="container contact-inner"><div><p class="section-label">05 / CONTACT</p><h2>Have a project or opportunity<br>in mind? <span class="accent">Let's talk.</span></h2><p>I'm interested in software development opportunities and meaningful projects. Feel free to reach out.</p></div>
-        <div class="contact-card"><p class="contact-card-label">GET IN TOUCH</p><a href="mailto:YOUR_EMAIL@example.com" class="contact-email">YOUR_EMAIL@example.com <span>↗</span></a><p class="contact-note">Replace this placeholder with your professional email address.</p><div class="social-links"><a href="https://github.com/HemanathMadhan" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div>
+    <!-- 6. Education & Experience Section -->
+    <section class="section edu-exp-section" id="education">
+      <div class="container edu-exp-grid">
+        <!-- Left Column: Education -->
+        <div class="edu-column">
+          <div class="section-title-wrap">
+            <div class="sub-header-row">
+              <div class="section-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <h2 class="section-title">Education</h2>
+            </div>
+          </div>
+
+          <div class="timeline-list">
+            <!-- M.Sc. -->
+            <div class="timeline-entry">
+              <div class="timeline-marker"></div>
+              <div class="timeline-info">
+                <div class="timeline-title-row">
+                  <h3 class="entry-title">M.Sc. Computer Science</h3>
+                  <div class="timeline-date-col">
+                    <span class="entry-date">2024 – 2026</span>
+                    <span class="badge-status">Pursuing</span>
+                  </div>
+                </div>
+                <p class="entry-sub">University of Madras (IDE)</p>
+              </div>
+            </div>
+
+            <!-- BCA -->
+            <div class="timeline-entry">
+              <div class="timeline-marker"></div>
+              <div class="timeline-info">
+                <div class="timeline-title-row">
+                  <h3 class="entry-title">BCA</h3>
+                  <div class="timeline-date-col">
+                    <span class="entry-date">2020 – 2023</span>
+                    <span class="badge-status">Completed</span>
+                  </div>
+                </div>
+                <p class="entry-sub">Dr. MGR Educational and Research Institute</p>
+              </div>
+            </div>
+
+            <!-- HSC -->
+            <div class="timeline-entry">
+              <div class="timeline-marker"></div>
+              <div class="timeline-info">
+                <div class="timeline-title-row">
+                  <h3 class="entry-title">HSC</h3>
+                  <div class="timeline-date-col">
+                    <span class="entry-date">2019 – 2020</span>
+                  </div>
+                </div>
+                <p class="entry-sub">Higher Secondary Certificate</p>
+              </div>
+            </div>
+
+            <!-- SSLC -->
+            <div class="timeline-entry">
+              <div class="timeline-marker"></div>
+              <div class="timeline-info">
+                <div class="timeline-title-row">
+                  <h3 class="entry-title">SSLC</h3>
+                  <div class="timeline-date-col">
+                    <span class="entry-date">2017 – 2018</span>
+                  </div>
+                </div>
+                <p class="entry-sub">Secondary School Leaving Certificate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Experience & Certifications -->
+        <div class="exp-column">
+          <!-- Experience Block -->
+          <div class="exp-block">
+            <div class="sub-header-row">
+              <div class="section-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+              <h2 class="section-title">Experience</h2>
+            </div>
+
+            <div class="experience-card">
+              <div class="exp-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-title-row">
+                  <h3 class="entry-title">Contract Employee</h3>
+                  <span class="badge-date">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    2024 – Present
+                  </span>
+                </div>
+                <p class="exp-org">University of Madras, Chennai</p>
+                <p class="exp-desc">Working on university IT and administrative systems.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications Block -->
+          <div class="cert-block">
+            <div class="sub-header-row">
+              <div class="section-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <h2 class="section-title">Certifications</h2>
+            </div>
+
+            <ul class="cert-list">
+              <li>
+                <span class="check-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>SAP Basic Level Certification – RPS Academy (2025)</span>
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Type Writing – Lower Level</span>
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>Data Analytics Project</span>
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>ChatGPT for Data Analytics</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Contact Section ("Get in Touch") -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-banner">
+          <div class="contact-banner-left">
+            <div class="contact-icon-bubble">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </div>
+            <div class="contact-text-box">
+              <h2 class="contact-banner-title">Get in Touch</h2>
+              <p class="contact-banner-sub">Have a project, opportunity or any questions?<br>Feel free to reach out to me.</p>
+            </div>
+          </div>
+
+          <div class="contact-banner-divider" aria-hidden="true"></div>
+
+          <div class="contact-banner-middle">
+            <ul class="contact-info-list">
+              <li>
+                <span class="ci-icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </span>
+                <a href="mailto:hemanathm@gmail.com" class="ci-link">hemanathm@gmail.com</a>
+              </li>
+              <li>
+                <span class="ci-icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </span>
+                <span class="ci-text">+91 XXXXX XXXXX</span>
+              </li>
+              <li>
+                <span class="ci-icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </span>
+                <span class="ci-text">Chennai, India</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-banner-right">
+            <a href="mailto:hemanathm@gmail.com" class="btn btn-contact-white">
+              <span>Contact Me</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container footer-inner"><a class="brand" href="#home"><span class="brand-mark">H</span><span>hemanath<span class="brand-dot">.</span></span></a><p>Designed & built with care by Hemanath M.</p><a href="#home" class="back-top">Back to top ↑</a></div><p class="copyright">© <span id="year"></span> Hemanath M. All rights reserved.</p></footer>
+
+  <!-- 8. Footer -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <a href="#home" class="brand-logo" aria-label="Hemanath M Home">
+        <span class="logo-box">H</span>
+        <span class="logo-name">Hemanath M.</span>
+      </a>
+
+      <ul class="footer-nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="footer-social-links">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="social-pill" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://github.com/HemanathMadhan" target="_blank" rel="noreferrer" class="social-pill" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="social-pill" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://wa.me/" target="_blank" rel="noreferrer" class="social-pill" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p class="copyright">© 2026 Hemanath M. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Resume Modal -->
+  <div class="modal-backdrop" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="resumeModalTitle">Hemanath M. — Resume</h3>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="resume-preview">
+          <h4>Hemanath M.</h4>
+          <p class="resume-role">Software Developer | M.Sc. Computer Science</p>
+          <p><strong>Email:</strong> hemanathm@gmail.com &nbsp;|&nbsp; <strong>Location:</strong> Chennai, India</p>
+          <hr>
+          <h5>Education</h5>
+          <p>• <strong>M.Sc. Computer Science</strong> — University of Madras (2024–2026)<br>
+          • <strong>BCA</strong> — Dr. MGR Educational & Research Institute (2020–2023)</p>
+          <h5>Skills</h5>
+          <p>Java, Python, PHP, MySQL, SQL, Web Development, TensorFlow, Data Analytics</p>
+          <h5>Experience</h5>
+          <p>• <strong>Contract Employee</strong> — University of Madras (2024–Present)</p>
+          <h5>Certifications</h5>
+          <p>• SAP Basic Level Certification — RPS Academy (2025)<br>
+          • Type Writing Lower Level &nbsp;|&nbsp; Data Analytics Project &nbsp;|&nbsp; ChatGPT for Data Analytics</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modalPrintBtn">Print / Save as PDF</button>
+        <button class="btn btn-primary" id="modalOkBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>
