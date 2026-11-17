@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial check
 
-  // 3. Project Category Filter Tabs (All / Professional Work / Internship Projects)
+  // 3. Project Category Filter Tabs (All / Professional / Internship / Academic)
   const catFilterBtns = document.querySelectorAll('.cat-filter-btn');
   const categoryBlocks = document.querySelectorAll('.project-category-block');
-  const categorySeparator = document.querySelector('.category-separator');
+  const categorySeparators = document.querySelectorAll('.category-separator');
 
   if (catFilterBtns.length > 0 && categoryBlocks.length > 0) {
     catFilterBtns.forEach((btn) => {
@@ -91,10 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        // Hide separator if viewing only one category
-        if (categorySeparator) {
-          categorySeparator.style.display = filter === 'all' ? '' : 'none';
-        }
+        // Hide separators if viewing only one category
+        categorySeparators.forEach((sep) => {
+          sep.style.display = filter === 'all' ? '' : 'none';
+        });
       });
     });
   }
