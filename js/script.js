@@ -59,28 +59,43 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial check
 
-  // 3. View All Projects Toggle
-  const viewAllBtn = document.getElementById('viewAllProjectsBtn');
-  const extraProjects = document.querySelectorAll('.project-extra');
+  // 3. Project Category Filter Tabs (All / Professional Work / Internship Projects)
+  const catFilterBtns = document.querySelectorAll('.cat-filter-btn');
+  const categoryBlocks = document.querySelectorAll('.project-category-block');
+  const categorySeparator = document.querySelector('.category-separator');
 
-  if (viewAllBtn && extraProjects.length > 0) {
-    viewAllBtn.addEventListener('click', () => {
-      const isHidden = extraProjects[0].classList.contains('hidden');
+  if (catFilterBtns.length > 0 && categoryBlocks.length > 0) {
+    catFilterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
 
-      extraProjects.forEach((card) => {
-        card.classList.toggle('hidden', !isHidden);
-        if (isHidden) {
-          // Trigger smooth reveal animation when unhiding
-          setTimeout(() => {
-            card.classList.add('visible');
-          }, 30);
+        // Update active button state and ARIA
+        catFilterBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Toggle category blocks
+        categoryBlocks.forEach((block) => {
+          const category = block.getAttribute('data-category');
+          if (filter === 'all' || filter === category) {
+            block.style.display = '';
+            // Trigger reveal animation on cards in this block
+            block.querySelectorAll('.project-card').forEach((card) => {
+              card.classList.add('visible');
+            });
+          } else {
+            block.style.display = 'none';
+          }
+        });
+
+        // Hide separator if viewing only one category
+        if (categorySeparator) {
+          categorySeparator.style.display = filter === 'all' ? '' : 'none';
         }
       });
-
-      const span = viewAllBtn.querySelector('span');
-      if (span) {
-        span.textContent = isHidden ? 'Show Less' : 'View All Projects';
-      }
     });
   }
 

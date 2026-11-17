@@ -395,31 +395,56 @@
               </svg>
             </div>
             <div>
-              <h2 class="section-title">Projects</h2>
-              <p class="section-subtitle">Some of my key academic and personal projects.</p>
+              <h2 class="section-title">Featured <span class="accent-green">Projects</span></h2>
+              <p class="section-subtitle">Showcasing professional enterprise work and specialized technical internship projects.</p>
             </div>
           </div>
 
-          <div class="projects-heading-right">
-            <button class="btn btn-outline" id="viewAllProjectsBtn">
-              <span>View All Projects</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+          <div class="projects-category-filter" role="tablist" aria-label="Filter projects by category">
+            <button class="cat-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+              <span>All Projects</span>
+              <span class="count-badge">8</span>
+            </button>
+            <button class="cat-filter-btn" data-filter="professional" role="tab" aria-selected="false">
+              <span>Professional Work</span>
+              <span class="count-badge">3</span>
+            </button>
+            <button class="cat-filter-btn" data-filter="internship" role="tab" aria-selected="false">
+              <span>Internship Projects</span>
+              <span class="count-badge">5</span>
             </button>
           </div>
         </div>
 
-        <div class="projects-grid" id="projectsGrid">
-          <!-- Project 1: WiFi Registration Portal -->
-          <article class="project-card reveal">
-            <div class="project-preview-wrap">
-              <img src="assets/project-wifi-mgmt.jpg" alt="WiFi Registration Portal Preview" class="project-img"
-                width="1024" height="466" loading="lazy">
-              <span class="project-badge">Campus Infrastructure</span>
+        <!-- =================================================================
+             Category 1: Professional Work Projects
+             ================================================================= -->
+        <div class="project-category-block" data-category="professional" id="professionalWorkSection">
+          <div class="category-section-header">
+            <div class="category-meta-left">
+              <span class="category-chip chip-pro">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                Professional Experience
+              </span>
+              <h3 class="category-heading">1. Professional Work Projects</h3>
+              <p class="category-description">Production-grade web portals, network switch telemetry, and institutional systems developed at the University of Madras Network Operating Centre (NOC).</p>
             </div>
+            <div class="category-meta-right">
+              <span class="category-count">3 Systems</span>
+            </div>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: WiFi Registration Portal -->
+            <article class="project-card reveal">
+              <div class="project-preview-wrap">
+                <img src="assets/project-wifi-mgmt.jpg" alt="WiFi Registration Portal Preview" class="project-img"
+                  width="1024" height="466" loading="lazy">
+                <span class="project-badge badge-pro">Professional Work</span>
+              </div>
             <div class="project-body">
               <div class="project-title-row">
                 <h3 class="project-title">WiFi Registration Portal</h3>
@@ -464,7 +489,7 @@
             <div class="project-preview-wrap">
               <img src="assets/project-network-status.jpg" alt="Network Status Monitoring Portal Preview"
                 class="project-img" width="1024" height="487" loading="lazy">
-              <span class="project-badge">NOC Telemetry</span>
+              <span class="project-badge badge-pro">Professional Work</span>
             </div>
             <div class="project-body">
               <div class="project-title-row">
@@ -510,7 +535,7 @@
             <div class="project-preview-wrap">
               <img src="assets/project-distance-edu.jpg" alt="Distance Education Online Portal Preview"
                 class="project-img" width="380" height="148" loading="lazy">
-              <span class="project-badge">Academic Platform</span>
+              <span class="project-badge badge-pro">Professional Work</span>
             </div>
             <div class="project-body">
               <div class="project-title-row">
@@ -549,13 +574,44 @@
               </div>
             </div>
           </article>
+        </div>
+      </div>
+
+      <!-- Visual Separator between Categories -->
+      <div class="category-separator" aria-hidden="true"></div>
+
+      <!-- =================================================================
+           Category 2: Internship Projects
+           ================================================================= -->
+      <div class="project-category-block" data-category="internship" id="internshipSection">
+        <div class="category-section-header">
+          <div class="category-meta-left">
+            <span class="category-chip chip-intern">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 2v7.31"></path>
+                <path d="M14 9.3V1.99"></path>
+                <path d="M8.5 2h7"></path>
+                <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
+                <path d="M5.52 16h12.96"></path>
+              </svg>
+              Applied Research & Development
+            </span>
+            <h3 class="category-heading">2. Internship Projects</h3>
+            <p class="category-description">Specialized machine learning, deep transfer learning (CNN/DenseNet), computer vision, and exploratory data analytics applications completed during technical internships.</p>
+          </div>
+          <div class="category-meta-right">
+            <span class="category-count">5 Projects</span>
+          </div>
+        </div>
+
+        <div class="projects-grid">
 
           <!-- Project 4: Leaf Disease Identification -->
-          <article class="project-card project-extra hidden reveal">
+          <article class="project-card reveal">
             <div class="project-preview-wrap">
               <img src="assets/project-leaf.jpg" alt="Leaf Disease Identification Preview" class="project-img"
                 width="380" height="148" loading="lazy">
-              <span class="project-badge">Deep Learning / CNN</span>
+              <span class="project-badge badge-intern">Internship Project</span>
             </div>
             <div class="project-body">
               <div class="project-title-row">
@@ -597,11 +653,11 @@
           </article>
 
           <!-- Project 5: Flower Recognition System -->
-          <article class="project-card project-extra hidden reveal">
+          <article class="project-card reveal">
             <div class="project-preview-wrap">
               <img src="assets/project-flower.jpg" alt="Flower Recognition System Preview" class="project-img"
                 width="382" height="148" loading="lazy">
-              <span class="project-badge">Machine Learning / Web</span>
+              <span class="project-badge badge-intern">Internship Project</span>
             </div>
             <div class="project-body">
               <div class="project-title-row">
@@ -643,11 +699,11 @@
           </article>
 
           <!-- Project 6: Skin Cancer Detection -->
-          <article class="project-card project-extra hidden reveal">
+          <article class="project-card reveal">
             <div class="project-preview-wrap">
               <img src="assets/project-cancer.jpg" alt="Skin Cancer Detection Preview" class="project-img" width="382"
                 height="148" loading="lazy">
-              <span class="project-badge">Deep Learning / DenseNet</span>
+              <span class="project-badge badge-intern">Internship Project</span>
             </div>
             <div class="project-body">
               <div class="project-title-row">
@@ -689,11 +745,11 @@
           </article>
 
           <!-- Project 7: Airline Dataset Analysis -->
-          <article class="project-card project-extra hidden reveal">
+          <article class="project-card reveal">
             <div class="project-preview-wrap">
               <img src="assets/project-airline.jpg" alt="Airline Dataset Analysis Preview" class="project-img"
                 width="380" height="148" loading="lazy">
-              <span class="project-badge">Data Analytics</span>
+              <span class="project-badge badge-intern">Internship Project</span>
             </div>
             <div class="project-body">
               <div class="project-title-row">
@@ -735,11 +791,11 @@
           </article>
 
           <!-- Project 8: Smartphone Dataset Analysis -->
-          <article class="project-card project-extra hidden reveal">
+          <article class="project-card reveal">
             <div class="project-preview-wrap">
               <img src="assets/project-smartphone.jpg" alt="Smartphone Dataset Analysis Preview" class="project-img"
                 width="380" height="148" loading="lazy">
-              <span class="project-badge">Market Intelligence</span>
+              <span class="project-badge badge-intern">Internship Project</span>
             </div>
             <div class="project-body">
               <div class="project-title-row">
@@ -781,7 +837,8 @@
           </article>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- 6. Education & Experience Section -->
     <section class="section edu-exp-section" id="education">
